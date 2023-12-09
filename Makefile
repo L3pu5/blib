@@ -9,4 +9,10 @@ clean:
 build:
 	mkdir ./export ./export/lib ./export/include
 	cp ./src/*.h ./export/include/
-	gcc $(CLFLAGS) -shared -o ./export/lib/blib.so -fPIC $(SRC)
+	gcc $(CLFLAGS) -shared -o ./export/lib/libblib.so -fPIC $(SRC)
+
+install:
+	mkdir ./export ./export/lib ./export/include
+	cp ./src/*.h ./export/include/
+	gcc $(CLFLAGS) -shared -o ./export/lib/libblib.so -fPIC $(SRC)
+	cp /export/lib/libblib.so /lib/
